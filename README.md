@@ -1,0 +1,1 @@
+In this project i am building a Tic Tac Toe game using HTML,CSS and JavaScript. By the end it will be a fully functional game with two players interacting with the DOM to place their markers 
