@@ -19,4 +19,20 @@ const winningCombinations = [
   [2, 4, 6]
 ];
 
+function handleCellClick(event) {
+  const cellIndex = event.target.id.split('-')[1];
+  // Prevent overwrite or click after game ends
+  if (board[cellIndex] !== '' || !gameActive) return; 
+
+  board[cellIndex] = currentPlayer; 
+  // Display current player's mark
+  event.target.textContent = currentPlayer; 
+
+  checkWinner();
+
+  // Switch player and update turn status
+  currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+  turnStatus.textContent = `Player ${currentPlayer}'s Turn`;
+}
+
 
