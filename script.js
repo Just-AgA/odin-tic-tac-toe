@@ -35,4 +35,22 @@ function handleCellClick(event) {
   turnStatus.textContent = `Player ${currentPlayer}'s Turn`;
 }
 
+function checkWinner() {
+  for (const combination of winningCombinations) {
+    const [a, b, c] = combination;
+    if (board[a] && (board[a] === board[b]) && (board[a] === board[c])) {
+      gameActive = false; 
+      resultDiv.textContent = `Player ${currentPlayer} Wins!`; 
+      turnStatus.textContent = '';
+      return;
+    }
+  }
+
+  if (!board.includes('')) {
+    gameActive = false;
+    resultDiv.textContent = 'It\'s a Draw!';
+    turnStatus.textContent = ''; 
+  }
+}
+
 
