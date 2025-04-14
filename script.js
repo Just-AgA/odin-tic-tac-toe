@@ -53,4 +53,14 @@ function checkWinner() {
   }
 }
 
+function resetGame() {
+  board = ['', '', '', '', '', '', '', '', '']; 
+  currentPlayer = 'X'; 
+  gameActive = true;
+
+  resultDiv.textContent = ''; 
+  turnStatus.textContent = `Player ${currentPlayer}'s Turn`; 
+  cells.forEach(cell => cell.textContent = ''); 
+}
+
 
