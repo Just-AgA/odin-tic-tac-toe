@@ -67,4 +67,4 @@ cells.forEach(cell => {
   cell.addEventListener('click', handleCellClick);
 });
 
-
+resetButton.addEventListener('click', resetGame);
